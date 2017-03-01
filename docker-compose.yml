@@ -1,7 +1,7 @@
 version: '2'
 services:
-  postgraphql:    
-    image: docker_postgraphql
+  postgraphql:
+    image: simonkuldin/postgraphql
     networks:
       - missioncontrol
     ports:
@@ -13,8 +13,8 @@ services:
       PG_SCHEMA: mission_control
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-  pgbouncer:    
-    image: docker_pgbouncer
+  pgbouncer:
+    image: simonkuldin/pgbouncer
     networks:
       - missioncontrol
     ports:
@@ -33,7 +33,7 @@ services:
       #  POSTGRES_ENV_POSTGRES_DB: postgres
       #  POSTGRES_ENV_POSTGRES_PASSWORD: postgres
   postgres:
-    image: docker_postgres
+    image: simonkuldin/postgres
     networks:
       - missioncontrol
     ports:
